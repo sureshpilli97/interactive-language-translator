@@ -3,6 +3,7 @@
 # import web app flask packages
 
 from flask import Flask,request,render_template,flash,send_file
+from flask_cors import CORS
 from wtforms import SelectField
 from flask_wtf import FlaskForm 
 from time import sleep
@@ -78,6 +79,7 @@ class Form(FlaskForm):
 # Flask app creation for web app
 
 app = Flask(__name__, static_url_path='/static')
+CORS(app, resources={r"/*": {"origins": "*"}})
 app.secret_key='1236547890'
 
 # route home pagetext=""
@@ -153,4 +155,4 @@ def result():
 # Main function for the app
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
