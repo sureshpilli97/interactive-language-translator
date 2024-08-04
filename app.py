@@ -89,8 +89,7 @@ text,speek="",""
 
 @app.route("/")
 def home():
-    # return render_template("index.html",form=Form())
-     return "Flask Vercel Example - Hello World", 200
+    return render_template("index.html",form=Form())
 @app.route("/record",methods=['GET','POST'])
 def record():
     global text,speek,get_speech,user_lang,required_lang,on
